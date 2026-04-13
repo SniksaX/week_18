@@ -31,8 +31,8 @@ class User extends Authenticatable
         ];
     }
 
-    public function setting()
+    public function settings()
     {
-        return $this->hasOne(Setting::class);
+        return $this->hasOne(Settings::class);
     }
 }
