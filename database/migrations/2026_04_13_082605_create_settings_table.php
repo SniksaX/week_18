@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             
             $table->foreignId('user_id')
                   ->constrained('users')
@@ -21,8 +20,9 @@ return new class extends Migration
 
             $table->string('theme');
             $table->string('lang');
+            $table->unique('user_id');
 
-            $table->unique('user_id'); 
+            $table->timestamps();
         });
     }
 
